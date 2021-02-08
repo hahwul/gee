@@ -10,7 +10,7 @@ type Options struct {
 	Suffix        string
 	WithTimestamp bool
 	WithLine      bool
-	RemoveLine    bool
+	RemoveNewLine bool
 	TableMarkdown bool
 	TableHTML     bool
 	Regex         string

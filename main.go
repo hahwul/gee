@@ -19,6 +19,7 @@ func main() {
 	withTimeOption := flag.Bool("with-time", false, "With timestamp")
 	prefixOption := flag.String("prefix", "", "Prefix string")
 	suffixOption := flag.String("suffix", "", "Suffix string")
+	rmnlOption := flag.Bool("rmnl", false, "Remove newline(\\r\\n)")
 	flag.Parse()
 
 	// Show version
@@ -45,6 +46,7 @@ func main() {
 		WithTimestamp: *withTimeOption,
 		Prefix:        *prefixOption,
 		Suffix:        *suffixOption,
+		RemoveNewLine: *rmnlOption,
 	}
 
 	// Running gee app

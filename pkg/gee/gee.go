@@ -45,7 +45,11 @@ func Gee(options model.Options) {
 		// Prefix and Suffix
 		line = options.Prefix + l + options.Suffix
 
-		fmt.Println(line)
+		if options.RemoveNewLine {
+			fmt.Print(line)
+		} else {
+			fmt.Println(line)
+		}
 		if (stdLine > options.ChunkedLine) && (options.ChunkedLine != 0) {
 			ClosedFiles(files)
 			for _, filename := range options.Files {
@@ -60,9 +64,14 @@ func Gee(options model.Options) {
 			stdPointer = stdPointer + 1
 		}
 		for _, k := range files {
-			_, err := k.WriteString(line)
-			if err != nil {
-
+			if options.RemoveNewLine {
+				_, err := k.WriteString(line)
+				if err != nil {
+				}
+			} else {
+				_, err := k.WriteString(line + "\r\n")
+				if err != nil {
+				}
 			}
 		}
 		stdLine = stdLine + 1
