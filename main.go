@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"strings"
 
 	app "github.com/hahwul/gee/pkg/gee"
 	model "github.com/hahwul/gee/pkg/model"
@@ -11,16 +12,31 @@ import (
 
 func main() {
 	// Commandline parse
-	version := flag.Bool("-version", false, "version of gee")
+	versionOption := flag.Bool("version", false, "Version of gee")
+	appendOption := flag.Bool("append", false, "Append mode for files")
 	flag.Parse()
-	options := model.Options{
-		Files: flag.Args(),
-	}
 
 	// Show version
-	if *version {
+	if *versionOption {
 		fmt.Println(printing.VERSION)
+		return
 	}
+
+	// Finding file value
+	var files []string
+	args := flag.Args()
+	for _, v := range args {
+		if !strings.Contains(v, "-") {
+			files = append(files, v)
+		}
+	}
+
+	// Set Options
+	options := model.Options{
+		Files:  files,
+		Append: *appendOption,
+	}
+
 	// Running gee app
 	app.Gee(options)
 }
