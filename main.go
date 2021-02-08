@@ -16,6 +16,7 @@ func main() {
 	appendOption := flag.Bool("append", false, "Append mode for files")
 	chunkedLineOption := flag.Int("chunked", 0, "Chuked files from line (e.g output / output_1 / output_2)")
 	withLineOption := flag.Bool("with-line", false, "With line number")
+	withTimeOption := flag.Bool("with-time", false, "With timestamp")
 	flag.Parse()
 
 	// Show version
@@ -35,10 +36,11 @@ func main() {
 
 	// Set Options
 	options := model.Options{
-		Files:       files,
-		Append:      *appendOption,
-		ChunkedLine: *chunkedLineOption,
-		WithLine:    *withLineOption,
+		Files:         files,
+		Append:        *appendOption,
+		ChunkedLine:   *chunkedLineOption,
+		WithLine:      *withLineOption,
+		WithTimestamp: *withTimeOption,
 	}
 
 	// Running gee app

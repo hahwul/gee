@@ -38,6 +38,9 @@ func Gee(options model.Options) {
 		if options.WithLine {
 			l = "[" + strconv.Itoa(stdLine) + "] " + l
 		}
+		if options.WithTimestamp {
+			l = "[" + GetNowTime() + "] " + l
+		}
 
 		line = l
 
