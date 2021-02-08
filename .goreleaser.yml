@@ -1,0 +1,82 @@
+project_name: gee
+
+before:
+  hooks:
+  - go mod download
+
+builds:
+  -
+    main: .
+    binary: gee
+    goos:
+      - windows
+      - linux
+      - darwin
+      - freebsd
+    goarch:
+      - amd64
+      - 386
+      - arm
+      - arm64
+    goarm:
+      - 6
+    ignore:
+      - goos: darwin
+        goarch: 386
+      - goos: darwin
+        goarch: arm
+      - goos: darwin
+        goarch: arm64
+      - goos: windows
+        goarch: 386
+      - goos: windows
+        goarch: arm
+      - goos: windows
+        goarch: arm64
+
+checksum:
+  name_template: "{{ .ProjectName }}_checksums.txt"
+
+changelog:
+  sort: desc
+  filters:
+    exclude:
+    - '^MERGE'
+    - "{{ .Tag }}"
+
+release:
+  github:
+    owner: hahwul
+    name: gee
+
+brews:
+  -
+    name: gee
+    tap:
+      owner: hahwul
+      name: homebrew-gee
+    url_template: "https://github.com/hahwul/gee/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    commit_author:
+      name: hahwul
+      email: hahwul@gmail.com
+    folder: Formula
+    homepage: "https://github.com/hahwul/gee"
+    description: "Standard input to each files and stdout. similar to tee, write in go"
+    test: |
+      system "#{bin}/gee -version"
+    install: |
+      bin.install "gee"
+snapcrafts:
+  -
+    name: gee
+    # Remember you need to `snapcraft login` first.
+    publish: true
+    summary: Standard input to each files and stdout. similar to tee, write in go
+    description: Standard input to each files and stdout. similar to tee, write in go
+    grade: stable
+    confinement: strict
+    license: MIT
+
+    apps:
+      gee:
+        plugs: ["home"]
