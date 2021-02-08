@@ -4,8 +4,8 @@ package model
 type Options struct {
 	Files         []string
 	Append        bool
-	ChunkedLine   bool
-	ChunkedSize   bool
+	ChunkedLine   int
+	ChunkedSize   string
 	Prefix        string
 	Suffix        string
 	WithTimestamp bool
