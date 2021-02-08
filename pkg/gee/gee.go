@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	//	"sync"
 
 	model "github.com/hahwul/gee/pkg/model"
@@ -14,6 +15,8 @@ func Gee(options model.Options) {
 	sc := bufio.NewScanner(os.Stdin)
 	mode := os.O_CREATE | os.O_WRONLY
 	var files = []*os.File{}
+	stdLine := 1
+	stdPointer := 1
 
 	if options.Append {
 		mode = os.O_APPEND | os.O_CREATE | os.O_WRONLY
@@ -32,12 +35,29 @@ func Gee(options model.Options) {
 	for sc.Scan() {
 		line := sc.Text()
 		fmt.Println(line)
+		if stdLine > options.ChunkedLine {
+			ClosedFiles(files)
+			for _, filename := range options.Files {
+				f, err := os.OpenFile(filename+"_"+strconv.Itoa(stdPointer), mode, 0644)
+				if err != nil {
+
+				} else {
+					files = append(files, f)
+				}
+			}
+			stdLine = 1
+			stdPointer = stdPointer + 1
+		}
 		for _, k := range files {
 			_, err := k.WriteString(line)
 			if err != nil {
 
 			}
 		}
+		stdLine = stdLine + 1
 	}
 	//	wg.Wait()
+
+	// Graceful shutdown
+	ClosedFiles(files)
 }
