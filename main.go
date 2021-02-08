@@ -14,7 +14,8 @@ func main() {
 	// Commandline parse
 	versionOption := flag.Bool("version", false, "Version of gee")
 	appendOption := flag.Bool("append", false, "Append mode for files")
-	chunkedLineOption := flag.Int("chunked", 0, "chuked files from line (e.g output / output_1 / output_2)")
+	chunkedLineOption := flag.Int("chunked", 0, "Chuked files from line (e.g output / output_1 / output_2)")
+	withLineOption := flag.Bool("with-line", false, "With line number")
 	flag.Parse()
 
 	// Show version
@@ -37,6 +38,7 @@ func main() {
 		Files:       files,
 		Append:      *appendOption,
 		ChunkedLine: *chunkedLineOption,
+		WithLine:    *withLineOption,
 	}
 
 	// Running gee app

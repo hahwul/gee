@@ -33,9 +33,16 @@ func Gee(options model.Options) {
 	//	var wg sync.WaitGroup
 	//	wg.Add(1 + len(options.Files))
 	for sc.Scan() {
-		line := sc.Text()
+		l := sc.Text()
+		line := ""
+		if options.WithLine {
+			l = "[" + strconv.Itoa(stdLine) + "] " + l
+		}
+
+		line = l
+
 		fmt.Println(line)
-		if stdLine > options.ChunkedLine {
+		if (stdLine > options.ChunkedLine) && (options.ChunkedLine != 0) {
 			ClosedFiles(files)
 			for _, filename := range options.Files {
 				f, err := os.OpenFile(filename+"_"+strconv.Itoa(stdPointer), mode, 0644)
