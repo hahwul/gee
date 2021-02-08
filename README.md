@@ -1,6 +1,6 @@
 <p align="center">
   <br>
-  <a href="">GEE<!--<img src="" alt="gee" width="500px;">--></a>
+  GEE<!--<img src="" alt="gee" width="500px;">-->
   <br>
   Standard input to each files and stdout. similar to tee, write in go
   <br>
