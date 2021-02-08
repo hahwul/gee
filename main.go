@@ -17,6 +17,8 @@ func main() {
 	chunkedLineOption := flag.Int("chunked", 0, "Chuked files from line (e.g output / output_1 / output_2)")
 	withLineOption := flag.Bool("with-line", false, "With line number")
 	withTimeOption := flag.Bool("with-time", false, "With timestamp")
+	prefixOption := flag.String("prefix", "", "Prefix string")
+	suffixOption := flag.String("suffix", "", "Suffix string")
 	flag.Parse()
 
 	// Show version
@@ -41,6 +43,8 @@ func main() {
 		ChunkedLine:   *chunkedLineOption,
 		WithLine:      *withLineOption,
 		WithTimestamp: *withTimeOption,
+		Prefix:        *prefixOption,
+		Suffix:        *suffixOption,
 	}
 
 	// Running gee app

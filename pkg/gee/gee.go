@@ -42,7 +42,8 @@ func Gee(options model.Options) {
 			l = "[" + GetNowTime() + "] " + l
 		}
 
-		line = l
+		// Prefix and Suffix
+		line = options.Prefix + l + options.Suffix
 
 		fmt.Println(line)
 		if (stdLine > options.ChunkedLine) && (options.ChunkedLine != 0) {
