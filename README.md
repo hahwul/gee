@@ -18,10 +18,10 @@
   <a href="https://github.com/hahwul"><img src="https://img.shields.io/github/stars/hahwul?style=flat&logo=github"></a></a>
 </p>
 
-## Introduction
+## 🏁 Introduction
 Gee is tools of standard input to each files and stdout. It is similar to the tee command, but there are more functions for convenience. In addition, it was written as go.
 
-## Installation
+## 🚀 Installation
 from source
 ```
 $ go get github.com/hahwul/gee
@@ -32,7 +32,7 @@ $ brew tap hahwul/gee
 $ brew install gee
 ```
 
-## Usage
+## ☄️ Usage
 ```
 Usage: ./gee [flags] [file1] [file2] ...
 (If you do not specify a file, only stdout is output)
@@ -62,7 +62,7 @@ Flags:
     	With timestamp
 ```
 
-## Case of Study
+## 📚 Case of Study
 ### gee with prefix and suffix
 ```
 $ cat urls | gee -prefix "curl -i -k " -suffix " -H 'Auth: abcd'" curls.sh
@@ -73,8 +73,8 @@ curl -i -k http://testphp.vulnweb.com/listproducts.php?cat=asdf&ff=1 -H 'Auth: a
 curl -i -k https://xss-game.appspot.com/level1/frame  -H 'Auth: abcd'
 ```
 
-## Contribute
+## 🌟 Contribute
 [Contribute](/CONTRIBUTING.md)
 
-## Contributors
+## 🌸 Contributors
 ![](/CONTRIBUTORS.svg)
