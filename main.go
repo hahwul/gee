@@ -9,6 +9,7 @@ import (
 	app "github.com/hahwul/gee/pkg/gee"
 	model "github.com/hahwul/gee/pkg/model"
 	printing "github.com/hahwul/gee/pkg/printing"
+	"github.com/logrusorgru/aurora"
 )
 
 func main() {
@@ -28,9 +29,9 @@ func main() {
 	// Custom usage
 	flag.Usage = func() {
 		printing.Banner()
-		fmt.Fprintf(os.Stderr, "Usage: %s [flags] [file1] [file2] ...\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, aurora.White("Usage: %s [flags] [file1] [file2] ...\n").String(), os.Args[0])
 		fmt.Fprintf(os.Stderr, "(If you do not specify a file, only stdout is output)\n\n")
-		fmt.Fprintf(os.Stderr, "Flags\n")
+		fmt.Fprintf(os.Stderr, aurora.White("Flags:\n").String())
 		flag.PrintDefaults()
 	}
 
