@@ -18,6 +18,9 @@
 </p>
 
 ## Introduction
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fac8a4d4755a4fb481432f7ed14db3ca)](https://app.codacy.com/gh/hahwul/gee?utm_source=github.com&utm_medium=referral&utm_content=hahwul/gee&utm_campaign=Badge_Grade)
+
 Gee is tools of standard input to each files and stdout. It is similar to the tee command, but there are more functions for convenience. In addition, it was written as go.
 
 ## Installation
