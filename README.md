@@ -24,7 +24,40 @@ $ go get github.com/hahwul/gee
 ```
 
 ## Usage
-blahblah
+```
+Usage: ./gee [flags] [file1] [file2] ...
+(If you do not specify a file, only stdout is output)
+
+Flags
+  -append
+    	Append mode for files
+  -chunked int
+    	Chuked files from line (e.g output / output_1 / output_2)
+  -distribute
+    	Distribution to files
+  -prefix string
+    	Prefix string
+  -regex string
+    	Match with Regular Expression (like grep)
+  -regexv string
+    	Unmatch with Regular Expression (like grep -v)
+  -rmnl
+    	Remove newline(\r\n)
+  -suffix string
+    	Suffix string
+  -version
+    	Version of gee
+  -with-line
+    	With line number
+  -with-time
+    	With timestamp
+```
+
+## Case of Study
+### gee with prefix and suffix
+```
+$ cat urls | gee -prefix "curl -i -k " -suffix " -H 'Auth: abcd'" curls.sh
+```
 
 ## Contribute
 [Contribute](/CONTRIBUTING.md)
