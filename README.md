@@ -2,7 +2,7 @@
   <br>
   <img src="https://user-images.githubusercontent.com/13212227/107406554-e72ae780-6b4b-11eb-8f66-2f7e0d925f78.png" alt="gee" width="160px;">
   <br>
-  🏵 Standard input to each files and stdout. similar to tee, But there's a little bit more and Write in go
+  Standard input to each files and stdout. similar to tee, But there's a little bit more and Write in go
   <br><br>
   <!--
   <img src="https://img.shields.io/github/v/release/hahwul/dalfox?style=flat"> 
@@ -18,7 +18,7 @@
   <a href="https://github.com/hahwul"><img src="https://img.shields.io/github/stars/hahwul?style=flat&logo=github"></a></a>
 </p>
 
-## 🏁 Introduction
+## Introduction
 Gee is tools of standard input to each files and stdout. It is similar to the tee command, but there are more functions for convenience. In addition, it was written as go.
 
 ## 🚀 Installation
