@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
 	"strings"
 
 	app "github.com/hahwul/gee/pkg/gee"
@@ -23,6 +24,17 @@ func main() {
 	distributeOption := flag.Bool("distribute", false, "Distribution to files")
 	regexOption := flag.String("regex", "", "Match with Regular Expression (like grep)")
 	regexvOption := flag.String("regexv", "", "Unmatch with Regular Expression (like grep -v)")
+
+	// Custom usage
+	flag.Usage = func() {
+		printing.Banner()
+		fmt.Fprintf(os.Stderr, "Usage: %s [flags] [file1] [file2] ...\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "(If you do not specify a file, only stdout is output)\n\n")
+		fmt.Fprintf(os.Stderr, "Flags\n")
+		flag.PrintDefaults()
+	}
+
+	// Flag parse
 	flag.Parse()
 
 	// Show version
