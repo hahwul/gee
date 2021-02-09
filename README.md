@@ -37,7 +37,7 @@ $ brew install gee
 Usage: ./gee [flags] [file1] [file2] ...
 (If you do not specify a file, only stdout is output)
 
-Flags
+Flags:
   -append
     	Append mode for files
   -chunked int
