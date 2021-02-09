@@ -2,7 +2,7 @@
   <br>
   GEE<!--<img src="" alt="gee" width="500px;">-->
   <br>
-  Standard input to each files and stdout. similar to tee, write in go
+  Standard input to each files and stdout. similar to tee, But there's a little bit more and Write in go
   <br><br>
   <!--
   <img src="https://img.shields.io/github/v/release/hahwul/dalfox?style=flat"> 
