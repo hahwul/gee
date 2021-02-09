@@ -2,10 +2,9 @@ package gee
 
 import (
 	"bufio"
-	"fmt"
 	"os"
 	"strconv"
-	//	"sync"
+	// "sync"
 
 	model "github.com/hahwul/gee/pkg/model"
 	printing "github.com/hahwul/gee/pkg/printing"
@@ -47,11 +46,9 @@ func Gee(options model.Options) {
 		// Prefix and Suffix
 		line = options.Prefix + l + options.Suffix
 
-		if options.RemoveNewLine {
-			fmt.Print(line)
-		} else {
-			fmt.Println(line)
-		}
+		// Printing and Files writing
+		StdPrint(line, options)
+
 		if (stdLine > options.ChunkedLine) && (options.ChunkedLine != 0) {
 			ClosedFiles(files)
 			for _, filename := range options.Files {
