@@ -11,8 +11,7 @@ type Options struct {
 	WithTimestamp bool
 	WithLine      bool
 	RemoveNewLine bool
-	TableMarkdown bool
-	TableHTML     bool
+	TableType     string
 	Regex         string
 	RegexV        string
 	Split         string
