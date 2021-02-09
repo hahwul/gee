@@ -18,7 +18,7 @@
   <a href="https://github.com/hahwul"><img src="https://img.shields.io/github/stars/hahwul?style=flat&logo=github"></a></a>
 </p>
 
-## Introduction
+## 🔖 Introduction
 Gee is tools of standard input to each files and stdout. It is similar to the tee command, but there are more functions for convenience. In addition, it was written as go.
 
 ## 🚀 Installation
