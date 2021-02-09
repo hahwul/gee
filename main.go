@@ -20,6 +20,7 @@ func main() {
 	prefixOption := flag.String("prefix", "", "Prefix string")
 	suffixOption := flag.String("suffix", "", "Suffix string")
 	rmnlOption := flag.Bool("rmnl", false, "Remove newline(\\r\\n)")
+	distributeOption := flag.Bool("distribute", false, "Distribution to files")
 	flag.Parse()
 
 	// Show version
@@ -47,6 +48,7 @@ func main() {
 		Prefix:        *prefixOption,
 		Suffix:        *suffixOption,
 		RemoveNewLine: *rmnlOption,
+		Distribute:    *distributeOption,
 	}
 
 	// Running gee app

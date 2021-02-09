@@ -8,6 +8,7 @@ import (
 	//	"sync"
 
 	model "github.com/hahwul/gee/pkg/model"
+	printing "github.com/hahwul/gee/pkg/printing"
 )
 
 // Gee is running gee
@@ -17,6 +18,7 @@ func Gee(options model.Options) {
 	var files = []*os.File{}
 	stdLine := 1
 	stdPointer := 1
+	distributePointer := 0
 
 	if options.Append {
 		mode = os.O_APPEND | os.O_CREATE | os.O_WRONLY
@@ -55,7 +57,7 @@ func Gee(options model.Options) {
 			for _, filename := range options.Files {
 				f, err := os.OpenFile(filename+"_"+strconv.Itoa(stdPointer), mode, 0644)
 				if err != nil {
-
+					printing.ErrPrint(err)
 				} else {
 					files = append(files, f)
 				}
@@ -63,15 +65,16 @@ func Gee(options model.Options) {
 			stdLine = 1
 			stdPointer = stdPointer + 1
 		}
-		for _, k := range files {
-			if options.RemoveNewLine {
-				_, err := k.WriteString(line)
-				if err != nil {
-				}
+		if options.Distribute && (len(files) > 0) {
+			if distributePointer < len(files) {
+				WriteFile(files[distributePointer], line, options)
+				distributePointer = distributePointer + 1
 			} else {
-				_, err := k.WriteString(line + "\r\n")
-				if err != nil {
-				}
+				distributePointer = 0
+			}
+		} else {
+			for _, k := range files {
+				WriteFile(k, line, options)
 			}
 		}
 		stdLine = stdLine + 1
