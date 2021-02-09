@@ -10,5 +10,5 @@ RUN go build -o gee
 FROM debian:buster
 RUN mkdir /app
 WORKDIR /app/
-COPY --from=builder /go/src/app/gee /app/gitls
+COPY --from=builder /go/src/app/gee /app/gee
 CMD ["/app/gee"]
