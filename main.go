@@ -21,6 +21,8 @@ func main() {
 	suffixOption := flag.String("suffix", "", "Suffix string")
 	rmnlOption := flag.Bool("rmnl", false, "Remove newline(\\r\\n)")
 	distributeOption := flag.Bool("distribute", false, "Distribution to files")
+	regexOption := flag.String("regex", "", "Match with Regular Expression (like grep)")
+	regexvOption := flag.String("regexv", "", "Unmatch with Regular Expression (like grep -v)")
 	flag.Parse()
 
 	// Show version
@@ -49,6 +51,8 @@ func main() {
 		Suffix:        *suffixOption,
 		RemoveNewLine: *rmnlOption,
 		Distribute:    *distributeOption,
+		Regex:         *regexOption,
+		RegexV:        *regexvOption,
 	}
 
 	// Running gee app

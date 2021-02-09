@@ -35,47 +35,56 @@ func Gee(options model.Options) {
 	//	wg.Add(1 + len(options.Files))
 	for sc.Scan() {
 		l := sc.Text()
-		line := ""
-		if options.WithLine {
-			l = "[" + strconv.Itoa(stdLine) + "] " + l
+		regexBool := true
+		if options.Regex != "" {
+			regexBool = Regex(options.Regex, l)
 		}
-		if options.WithTimestamp {
-			l = "[" + GetNowTime() + "] " + l
+		if options.RegexV != "" {
+			regexBool = RegexV(options.RegexV, l)
 		}
+		if regexBool {
+			line := ""
+			if options.WithLine {
+				l = "[" + strconv.Itoa(stdLine) + "] " + l
+			}
+			if options.WithTimestamp {
+				l = "[" + GetNowTime() + "] " + l
+			}
 
-		// Prefix and Suffix
-		line = options.Prefix + l + options.Suffix
+			// Prefix and Suffix
+			line = options.Prefix + l + options.Suffix
 
-		// Print to Stdout
-		StdPrint(line, options)
+			// Print to Stdout
+			StdPrint(line, options)
 
-		// Write to files
-		if (stdLine > options.ChunkedLine) && (options.ChunkedLine != 0) {
-			ClosedFiles(files)
-			for _, filename := range options.Files {
-				f, err := os.OpenFile(filename+"_"+strconv.Itoa(stdPointer), mode, 0644)
-				if err != nil {
-					printing.ErrPrint(err)
+			// Write to files
+			if (stdLine > options.ChunkedLine) && (options.ChunkedLine != 0) {
+				ClosedFiles(files)
+				for _, filename := range options.Files {
+					f, err := os.OpenFile(filename+"_"+strconv.Itoa(stdPointer), mode, 0644)
+					if err != nil {
+						printing.ErrPrint(err)
+					} else {
+						files = append(files, f)
+					}
+				}
+				stdLine = 1
+				stdPointer = stdPointer + 1
+			}
+			if options.Distribute && (len(files) > 0) {
+				if distributePointer < len(files) {
+					WriteFile(files[distributePointer], line, options)
+					distributePointer = distributePointer + 1
 				} else {
-					files = append(files, f)
+					distributePointer = 0
+				}
+			} else {
+				for _, k := range files {
+					WriteFile(k, line, options)
 				}
 			}
-			stdLine = 1
-			stdPointer = stdPointer + 1
+			stdLine = stdLine + 1
 		}
-		if options.Distribute && (len(files) > 0) {
-			if distributePointer < len(files) {
-				WriteFile(files[distributePointer], line, options)
-				distributePointer = distributePointer + 1
-			} else {
-				distributePointer = 0
-			}
-		} else {
-			for _, k := range files {
-				WriteFile(k, line, options)
-			}
-		}
-		stdLine = stdLine + 1
 	}
 	//	wg.Wait()
 
