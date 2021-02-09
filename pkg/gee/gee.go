@@ -46,9 +46,10 @@ func Gee(options model.Options) {
 		// Prefix and Suffix
 		line = options.Prefix + l + options.Suffix
 
-		// Printing and Files writing
+		// Print to Stdout
 		StdPrint(line, options)
 
+		// Write to files
 		if (stdLine > options.ChunkedLine) && (options.ChunkedLine != 0) {
 			ClosedFiles(files)
 			for _, filename := range options.Files {
