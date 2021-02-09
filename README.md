@@ -11,6 +11,7 @@
   <img src="https://api.codacy.com/project/badge/Grade/17cac7b8d1e849a688577f2bbdd6ecd0"> 
   <a href="https://goreportcard.com/report/github.com/hahwul/dalfox"><img src="https://goreportcard.com/badge/github.com/hahwul/dalfox"></a> 
     -->
+  <img src="https://api.codacy.com/project/badge/Grade/fac8a4d4755a4fb481432f7ed14db3ca">
   <img src="https://github.com/hahwul/gee/workflows/Build/badge.svg">
   <img src="https://github.com/hahwul/gee/workflows/SAST/badge.svg">
   <a href="https://twitter.com/intent/follow?screen_name=hahwul"><img src="https://img.shields.io/twitter/follow/hahwul?style=flat&logo=twitter"></a>
@@ -18,9 +19,6 @@
 </p>
 
 ## Introduction
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fac8a4d4755a4fb481432f7ed14db3ca)](https://app.codacy.com/gh/hahwul/gee?utm_source=github.com&utm_medium=referral&utm_content=hahwul/gee&utm_campaign=Badge_Grade)
-
 Gee is tools of standard input to each files and stdout. It is similar to the tee command, but there are more functions for convenience. In addition, it was written as go.
 
 ## Installation
