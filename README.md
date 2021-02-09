@@ -34,6 +34,10 @@ $ brew install gee
 
 ## ☄️ Usage
 ```
+$ ~/go/bin/gee -h (if you install from source)
+$ gee -h
+```
+```
 Usage: ./gee [flags] [file1] [file2] ...
 (If you do not specify a file, only stdout is output)
 
