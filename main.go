@@ -17,14 +17,17 @@ func main() {
 	versionOption := flag.Bool("version", false, "Version of gee")
 	appendOption := flag.Bool("append", false, "Append mode for files")
 	chunkedLineOption := flag.Int("chunked", 0, "Chuked files from line (e.g output / output_1 / output_2)")
-	withLineOption := flag.Bool("with-line", false, "With line number")
-	withTimeOption := flag.Bool("with-time", false, "With timestamp")
+	withLineOption := flag.Bool("with-line", false, "With line number (colorize blue)")
+	withTimeOption := flag.Bool("with-time", false, "With timestamp (colorize blue)")
 	prefixOption := flag.String("prefix", "", "Prefix string")
 	suffixOption := flag.String("suffix", "", "Suffix string")
 	rmnlOption := flag.Bool("rmnl", false, "Remove newline(\\r\\n)")
 	distributeOption := flag.Bool("distribute", false, "Distribution to files")
+	colorOption := flag.Bool("uncolor", false, "Uncolorize stdout")
 	regexOption := flag.String("regex", "", "Match with Regular Expression (like grep)")
 	regexvOption := flag.String("regexv", "", "Unmatch with Regular Expression (like grep -v)")
+	findOption := flag.String("find", "", "Find string in line (colorize red)")
+	replaceOption := flag.String("replace", "", "Replace string in line with '-find' option")
 
 	// Custom usage
 	flag.Usage = func() {
@@ -66,6 +69,9 @@ func main() {
 		Distribute:    *distributeOption,
 		Regex:         *regexOption,
 		RegexV:        *regexvOption,
+		Replace:       *replaceOption,
+		Find:          *findOption,
+		Color:         !*colorOption,
 	}
 
 	// Running gee app

@@ -16,4 +16,7 @@ type Options struct {
 	RegexV        string
 	Split         string
 	Distribute    bool
+	Replace       string
+	Find          string
+	Color         bool
 }

@@ -43,19 +43,14 @@ func Gee(options model.Options) {
 			regexBool = RegexV(options.RegexV, l)
 		}
 		if regexBool {
-			line := ""
-			if options.WithLine {
-				l = "[" + strconv.Itoa(stdLine) + "] " + l
-			}
-			if options.WithTimestamp {
-				l = "[" + GetNowTime() + "] " + l
-			}
+			linec, line := StringProc(l, stdLine, options)
 
 			// Prefix and Suffix
-			line = options.Prefix + l + options.Suffix
+			line = options.Prefix + line + options.Suffix
+			linec = options.Prefix + linec + options.Suffix
 
 			// Print to Stdout
-			StdPrint(line, options)
+			StdPrint(linec, options)
 
 			// Write to files
 			if (stdLine > options.ChunkedLine) && (options.ChunkedLine != 0) {
