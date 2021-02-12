@@ -11,7 +11,7 @@ type Options struct {
 	WithTimestamp bool
 	WithLine      bool
 	RemoveNewLine bool
-	OutputType    string
+	Format        string
 	Regex         string
 	RegexV        string
 	Split         string

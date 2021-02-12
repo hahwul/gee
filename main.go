@@ -28,6 +28,8 @@ func main() {
 	regexvOption := flag.String("regexv", "", "Unmatch with Regular Expression (like grep -v)")
 	findOption := flag.String("find", "", "Find string in line (colorize red)")
 	replaceOption := flag.String("replace", "", "Replace string in line with '-find' option")
+	splitOption := flag.String("split", "", "Split string within line. (to line , to table, to md-table)")
+	formatOption := flag.String("format", "line", "Change output format (json, md-table, html-table)")
 
 	// Custom usage
 	flag.Usage = func() {
@@ -72,6 +74,8 @@ func main() {
 		Replace:       *replaceOption,
 		Find:          *findOption,
 		Color:         !*colorOption,
+		Split:         *splitOption,
+		Format:        *formatOption,
 	}
 
 	// Running gee app
