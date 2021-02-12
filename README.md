@@ -49,22 +49,32 @@ Flags:
     	Chuked files from line (e.g output / output_1 / output_2)
   -distribute
     	Distribution to files
+  -find string
+    	Find string in line (colorize red)
+  -format string
+    	Change output format (json, md-table, html-table) (default "line")
   -prefix string
     	Prefix string
   -regex string
     	Match with Regular Expression (like grep)
   -regexv string
     	Unmatch with Regular Expression (like grep -v)
+  -replace string
+    	Replace string in line with '-find' option
   -rmnl
     	Remove newline(\r\n)
+  -split string
+    	Split string within line. (to line , to table, to md-table)
   -suffix string
     	Suffix string
+  -uncolor
+    	Uncolorize stdout
   -version
     	Version of gee
   -with-line
-    	With line number
+    	With line number (colorize blue)
   -with-time
-    	With timestamp
+    	With timestamp (colorize blue)
 ```
 
 ## 📚 Case of Study
