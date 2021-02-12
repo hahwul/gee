@@ -53,8 +53,8 @@ func StringProc(l string, stdLine int, options model.Options) (string, string) {
 	}
 	switch options.Format {
 	case "json":
-		returnString = "{\"line\":\"[" + returnString + "\"\"]\"}\n"
-		returnPlainString = "{\"line\":\"[" + returnPlainString + "\"\"]\"}\n"
+		returnString = "{\"line\":[" + returnString + "\"\"]}\n"
+		returnPlainString = "{\"line\":[" + returnPlainString + "\"\"]}\n"
 	case "md-table":
 		returnString = "|" + returnString + "\n"
 		returnPlainString = "|" + returnPlainString + "\n"
@@ -69,25 +69,26 @@ func toFormat(str string, options model.Options) string {
 	var returnString string
 	switch options.Format {
 	case "json":
-		returnString = str + ","
+		returnString = "\"" + setFix(str, options) + "\","
 	case "md-table":
-		returnString = str + "|"
+		returnString = setFix(str+"|", options)
 	case "html-table":
-		returnString = "<td>" + str + "</td>"
+		returnString = "<td>" + setFix(str, options) + "</td>"
 	default:
-		returnString = strings.Replace(str, "\n", "", -1) + "\n"
+		returnString = setFix(str, options) + "\n"
 	}
 	return returnString
 }
 
-func toJSON() {
-
+func setFix(str string, options model.Options) string {
+	pf := setPrefix(strings.Replace(str, "\n", "", -1), options)
+	sf := setSuffix(pf, options)
+	return sf
 }
 
-func toMarkdownTable() {
-
+func setPrefix(str string, options model.Options) string {
+	return options.Prefix + str
 }
-
-func toHTMLTable() {
-
+func setSuffix(str string, options model.Options) string {
+	return options.Suffix + str
 }

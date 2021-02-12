@@ -45,10 +45,6 @@ func Gee(options model.Options) {
 		if regexBool {
 			linec, line := StringProc(l, stdLine, options)
 
-			// Prefix and Suffix
-			line = options.Prefix + line + options.Suffix
-			linec = options.Prefix + linec + options.Suffix
-
 			// Print to Stdout
 			StdPrint(linec, options)
 
