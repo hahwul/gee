@@ -87,6 +87,30 @@ curl -i -k https://www.hahwul.com/?q=123 -H 'Auth: abcd'
 curl -i -k http://testphp.vulnweb.com/listproducts.php?cat=asdf&ff=1 -H 'Auth: abcd'
 curl -i -k https://xss-game.appspot.com/level1/frame  -H 'Auth: abcd'
 ```
+### Find and replace
+```
+$ cat raw.txt | gee -find keep-alive
+$ cat raw.txt | gee -find keep-alive -replace close
+```
+https://twitter.com/hahwul/status/1360495560843689989
+
+### Specify the maximum length of the file and save it in multiple files.
+```
+$ wc -l http.txt
+2278
+
+$ cat http.txt | gee -chunked 500 output
+```
+https://twitter.com/hahwul/status/1360495565633540097
+
+### Distribute each line sequentially to multiple files.
+```
+$ wc -l http.txt
+2278
+
+$ cat http.txt | gee -distribute alice.txt bob.txt charlie.txt
+```
+https://twitter.com/hahwul/status/1360495570922704897
 
 ## 🌟 Contribute
 [Contribute](/CONTRIBUTING.md)
