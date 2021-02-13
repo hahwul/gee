@@ -66,17 +66,17 @@ brews:
       system "#{bin}/gee -version"
     install: |
       bin.install "gee"
-snapcrafts:
-  -
-    name: gee
-    # Remember you need to `snapcraft login` first.
-    publish: true
-    summary: Standard input to each files and stdout. similar to tee, write in go
-    description: Standard input to each files and stdout. similar to tee, write in go
-    grade: stable
-    confinement: strict
-    license: MIT
-
-    apps:
-      gee:
-        plugs: ["home"]
+#snapcrafts:
+#  -
+#    name: gee
+#    # Remember you need to `snapcraft login` first.
+#    publish: true
+#    summary: Standard input to each files and stdout. similar to tee, write in go
+#    description: Standard input to each files and stdout. similar to tee, write in go
+#    grade: stable
+#    confinement: strict
+#    license: MIT
+#
+#    apps:
+#      gee:
+#        plugs: ["home"]
