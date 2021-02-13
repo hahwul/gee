@@ -68,6 +68,7 @@ func Gee(options model.Options) {
 					distributePointer = distributePointer + 1
 				} else {
 					distributePointer = 0
+					WriteFile(files[distributePointer], line, options)
 				}
 			} else {
 				for _, k := range files {
