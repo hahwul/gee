@@ -90,5 +90,5 @@ func setPrefix(str string, options model.Options) string {
 	return options.Prefix + str
 }
 func setSuffix(str string, options model.Options) string {
-	return options.Suffix + str
+	return str + options.Suffix
 }
