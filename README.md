@@ -20,7 +20,7 @@
 </p>
 
 ## 🔖 Introduction
-Gee is tools of stdin to each files and stdout. It is similar to the tee command, but there are more functions for convenience. In addition, it was written as go. which provides output to stdout and files. In this process, it has various processing functions for lines such as replace, prefix, and suffix, so it can be used as a pipeline configuration or as a utility for testing. For more information, see the usage and case of study below!
+Gee is tool of stdin to each files and stdout. It is similar to the tee command, but there are more functions for convenience. In addition, it was written as go. which provides output to stdout and files. In this process, it has various processing functions for lines such as replace, prefix, and suffix, so it can be used as a pipeline configuration or as a utility for testing. For more information, see the usage and case of study below!
 
 ## 🚀 Installation
 from source
