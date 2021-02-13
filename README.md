@@ -27,7 +27,7 @@ from source
 ```
 $ go get github.com/hahwul/gee
 ```
-with homebrew (coming soon 🙏🏼 haven't released it yet. can't use it.)
+with homebrew
 ```
 $ brew tap hahwul/gee
 $ brew install gee
