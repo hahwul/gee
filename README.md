@@ -113,7 +113,8 @@ $ cat http.txt | gee -distribute alice.txt bob.txt charlie.txt
 https://twitter.com/hahwul/status/1360495570922704897
 
 ## 🌟 Contribute
-[Contribute](/CONTRIBUTING.md)
+Contributions are always welcome. Please write/modify the code and send the PR.<br> 
+Please read [Contribute](/CONTRIBUTING.md) for more information.
 
 ## 🌸 Contributors
 ![](/CONTRIBUTORS.svg)
