@@ -47,18 +47,20 @@ Flags:
     	Append mode for files
   -chunked int
     	Chuked files from line (e.g output / output_1 / output_2)
+  -debug
+    	Show debug message!
   -distribute
     	Distribution to files
   -find string
     	Find string in line (colorize red)
   -format string
     	Change output format (json, md-table, html-table) (default "line")
-  -prefix string
-    	Prefix string
   -grep string
     	Greping with Regular Expression (like grep)
   -grepv string
     	Inverse greping with Regular Expression (like grep -v)
+  -prefix string
+    	Prefix string
   -replace string
     	Replace string in line with '-find' option
   -rmnl
@@ -74,7 +76,7 @@ Flags:
   -with-line
     	With line number (colorize blue)
   -with-time
-    	With timestamp (colorize blue)
+    	With timestamp (colorize green)
 ```
 
 ## 📚 Case of Study
