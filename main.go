@@ -18,7 +18,7 @@ func main() {
 	appendOption := flag.Bool("append", false, "Append mode for files")
 	chunkedLineOption := flag.Int("chunked", 0, "Chuked files from line (e.g output / output_1 / output_2)")
 	withLineOption := flag.Bool("with-line", false, "With line number (colorize blue)")
-	withTimeOption := flag.Bool("with-time", false, "With timestamp (colorize blue)")
+	withTimeOption := flag.Bool("with-time", false, "With timestamp (colorize green)")
 	prefixOption := flag.String("prefix", "", "Prefix string")
 	suffixOption := flag.String("suffix", "", "Suffix string")
 	rmnlOption := flag.Bool("rmnl", false, "Remove newline(\\r\\n)")

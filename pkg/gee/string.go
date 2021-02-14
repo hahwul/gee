@@ -33,7 +33,7 @@ func StringProc(l string, stdLine int, options model.Options) (string, string) {
 	}
 
 	if options.WithTimestamp {
-		result = au.BrightBlue("["+GetNowTime()+"] ").String() + result
+		result = au.BrightGreen("["+GetNowTime()+"] ").String() + result
 		resultPlain = "[" + GetNowTime() + "] " + resultPlain
 	}
 
