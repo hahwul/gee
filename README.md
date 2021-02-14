@@ -58,7 +58,7 @@ Flags:
   -grep string
     	Greping with Regular Expression (like grep)
   -grepv string
-    	Ungreping with Regular Expression (like grep -v)
+    	Inverse greping with Regular Expression (like grep -v)
   -replace string
     	Replace string in line with '-find' option
   -rmnl

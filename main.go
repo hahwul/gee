@@ -25,7 +25,7 @@ func main() {
 	distributeOption := flag.Bool("distribute", false, "Distribution to files")
 	colorOption := flag.Bool("uncolor", false, "Uncolorize stdout")
 	regexOption := flag.String("grep", "", "Greping with Regular Expression (like grep)")
-	regexvOption := flag.String("grepv", "", "Ungreping with Regular Expression (like grep -v)")
+	regexvOption := flag.String("grepv", "", "Inverse greping with Regular Expression (like grep -v)")
 	findOption := flag.String("find", "", "Find string in line (colorize red)")
 	replaceOption := flag.String("replace", "", "Replace string in line with '-find' option")
 	splitOption := flag.String("split", "", "Split string within line. (to line , to table, to md-table)")
