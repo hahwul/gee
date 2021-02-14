@@ -16,8 +16,10 @@
   <img src="https://github.com/hahwul/gee/workflows/Build/badge.svg">
   <img src="https://github.com/hahwul/gee/workflows/SAST/badge.svg">
   <a href="https://twitter.com/intent/follow?screen_name=hahwul"><img src="https://img.shields.io/twitter/follow/hahwul?style=flat&logo=twitter"></a>
-  <a href="https://github.com/hahwul"><img src="https://img.shields.io/github/stars/hahwul?style=flat&logo=github"></a></a>
+  <a href="https://github.com/hahwul"><img src="https://img.shields.io/github/stars/hahwul?style=flat&logo=github"></a>
 </p>
 
 ## 🔖 Introduction
 Gee is tool of stdin to each files and stdout. It is similar to the tee command, but there are more functions for convenience. In addition, it was written as go. which provides output to stdout and files. In this process, it has various processing functions for lines such as replace, prefix, and suffix, so it can be used as a pipeline configuration or as a utility for testing. For more information, see the usage and case of study below!
+
+## Showcase

@@ -2,3 +2,20 @@ title: "gee"
 remote_theme: pmarsceill/just-the-docs
 color_scheme: "dark"
 search_enabled: true
+search:
+  heading_level: 2
+  previews: 2
+  preview_words_before: 3
+  preview_words_after: 3
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+aux_links:
+  "GitHub Repository":
+    - "//github.com/hahwul/gee"
+plugins:
+  - jekyll-seo-tag
+
+
+#ga_tracking: UA-
+#ga_tracking_anonymize_ip: true
