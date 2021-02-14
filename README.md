@@ -55,10 +55,10 @@ Flags:
     	Change output format (json, md-table, html-table) (default "line")
   -prefix string
     	Prefix string
-  -regex string
-    	Match with Regular Expression (like grep)
-  -regexv string
-    	Unmatch with Regular Expression (like grep -v)
+  -grep string
+    	Greping with Regular Expression (like grep)
+  -grepv string
+    	Ungreping with Regular Expression (like grep -v)
   -replace string
     	Replace string in line with '-find' option
   -rmnl
