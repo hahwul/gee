@@ -30,6 +30,7 @@ func main() {
 	replaceOption := flag.String("replace", "", "Replace string in line with '-find' option")
 	splitOption := flag.String("split", "", "Split string within line. (to line , to table, to md-table)")
 	formatOption := flag.String("format", "line", "Change output format (json, md-table, html-table)")
+	debugOption := flag.Bool("debug", false, "Show debug message!")
 
 	// Custom usage
 	flag.Usage = func() {
@@ -76,8 +77,12 @@ func main() {
 		Color:         !*colorOption,
 		Split:         *splitOption,
 		Format:        *formatOption,
+		Debug:         *debugOption,
 	}
-
+	if *debugOption {
+		printing.DebugMsg("MSG","Running on Debug mode")
+		printing.DebugMsg("FILES",files)
+	}
 	// Running gee app
 	app.Gee(options)
 }

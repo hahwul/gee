@@ -19,4 +19,5 @@ type Options struct {
 	Replace       string
 	Find          string
 	Color         bool
+	Debug	      bool
 }

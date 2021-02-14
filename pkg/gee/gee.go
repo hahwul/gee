@@ -12,6 +12,9 @@ import (
 
 // Gee is running gee
 func Gee(options model.Options) {
+	if options.Debug {
+		printing.DebugMsg("MSG","Starting gee")
+	}
 	sc := bufio.NewScanner(os.Stdin)
 	mode := os.O_CREATE | os.O_WRONLY
 	var files = []*os.File{}
@@ -25,8 +28,8 @@ func Gee(options model.Options) {
 
 	for _, filename := range options.Files {
 		f, err := os.OpenFile(filename, mode, 0644)
-		if err != nil {
-
+		if err != nil && options.Debug {
+			printing.DebugMsg("ERROR",err)
 		} else {
 			files = append(files, f)
 		}
@@ -53,8 +56,8 @@ func Gee(options model.Options) {
 				ClosedFiles(files)
 				for _, filename := range options.Files {
 					f, err := os.OpenFile(filename+"_"+strconv.Itoa(stdPointer), mode, 0644)
-					if err != nil {
-						printing.ErrPrint(err)
+					if err != nil && options.Debug {
+						printing.DebugMsg("ERROR",err)
 					} else {
 						files = append(files, f)
 					}
@@ -82,4 +85,7 @@ func Gee(options model.Options) {
 
 	// Graceful shutdown
 	ClosedFiles(files)
+	if options.Debug {
+		printing.DebugMsg("MSG","Finish gee, graceful shutdown...")
+	}
 }
