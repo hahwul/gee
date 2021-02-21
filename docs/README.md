@@ -1,6 +1,6 @@
 <p align="center">
   <br>
-  <img src="https://user-images.githubusercontent.com/13212227/107406554-e72ae780-6b4b-11eb-8f66-2f7e0d925f78.png" alt="gee" width="160px;">
+  <img src="https://user-images.githubusercontent.com/13212227/107854997-1a7ab880-6e63-11eb-8626-9b0fcfeb6df4.jpg" alt="gee">
   <br>
   Standard input to each files and stdout. similar to tee, But there's a little bit more and Write in go
   <br><br>
