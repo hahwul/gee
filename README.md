@@ -25,18 +25,18 @@ Gee is tool of stdin to each files and stdout. It is similar to the tee command,
 ## 🚀 Installation
 from source
 ```
-$ go get github.com/hahwul/gee
+▶ go get github.com/hahwul/gee
 ```
 with homebrew
 ```
-$ brew tap hahwul/gee
-$ brew install gee
+▶ brew tap hahwul/gee
+▶ brew install gee
 ```
 
 ## ☄️ Usage
 ```
-$ ~/go/bin/gee -h (if you install from source)
-$ gee -h
+▶ ~/go/bin/gee -h (if you install from source)
+▶ gee -h
 ```
 ```
 Usage: ./gee [flags] [file1] [file2] ...
@@ -82,7 +82,7 @@ Flags:
 ## 📚 Case of Study
 ### gee with prefix and suffix
 ```
-$ cat urls | gee -prefix "curl -i -k " -suffix " -H 'Auth: abcd'" curls.sh
+▶ cat urls | gee -prefix "curl -i -k " -suffix " -H 'Auth: abcd'" curls.sh
 ```
 ```
 curl -i -k https://www.hahwul.com/?q=123 -H 'Auth: abcd'
@@ -91,26 +91,26 @@ curl -i -k https://xss-game.appspot.com/level1/frame  -H 'Auth: abcd'
 ```
 ### Find and replace
 ```
-$ cat raw.txt | gee -find keep-alive
-$ cat raw.txt | gee -find keep-alive -replace close
+▶ cat raw.txt | gee -find keep-alive
+▶ cat raw.txt | gee -find keep-alive -replace close
 ```
 https://twitter.com/hahwul/status/1360495560843689989
 
 ### Specify the maximum length of the file and save it in multiple files.
 ```
-$ wc -l http.txt
+▶ wc -l http.txt
 2278
 
-$ cat http.txt | gee -chunked 500 output
+▶ cat http.txt | gee -chunked 500 output
 ```
 https://twitter.com/hahwul/status/1360495565633540097
 
 ### Distribute each line sequentially to multiple files.
 ```
-$ wc -l http.txt
+▶ wc -l http.txt
 2278
 
-$ cat http.txt | gee -distribute alice.txt bob.txt charlie.txt
+▶ cat http.txt | gee -distribute alice.txt bob.txt charlie.txt
 ```
 https://twitter.com/hahwul/status/1360495570922704897
 
