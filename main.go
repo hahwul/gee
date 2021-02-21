@@ -54,7 +54,7 @@ func main() {
 	var files []string
 	args := flag.Args()
 	for _, v := range args {
-		if !strings.Contains(v, "-") {
+		if !strings.HasPrefix(v, "-") {
 			files = append(files, v)
 		}
 	}
