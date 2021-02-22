@@ -7,7 +7,7 @@ nav_order: 1
 
 ## install using go-get 
 ```
-▶ go get github.com/hahwul/gee
+▶ GO111MODULE=on go get -v github.com/hahwul/gee
 ```
 
 ## install using build project
