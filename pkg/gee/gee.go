@@ -13,7 +13,7 @@ import (
 // Gee is running gee
 func Gee(options model.Options) {
 	if options.Debug {
-		printing.DebugMsg("MSG","Starting gee")
+		printing.DebugMsg("MSG", "Starting gee")
 	}
 	sc := bufio.NewScanner(os.Stdin)
 	mode := os.O_CREATE | os.O_WRONLY
@@ -29,7 +29,7 @@ func Gee(options model.Options) {
 	for _, filename := range options.Files {
 		f, err := os.OpenFile(filename, mode, 0644)
 		if err != nil && options.Debug {
-			printing.DebugMsg("ERROR",err)
+			printing.DebugMsg("ERROR", err)
 		} else {
 			files = append(files, f)
 		}
@@ -57,7 +57,7 @@ func Gee(options model.Options) {
 				for _, filename := range options.Files {
 					f, err := os.OpenFile(filename+"_"+strconv.Itoa(stdPointer), mode, 0644)
 					if err != nil && options.Debug {
-						printing.DebugMsg("ERROR",err)
+						printing.DebugMsg("ERROR", err)
 					} else {
 						files = append(files, f)
 					}
@@ -72,6 +72,7 @@ func Gee(options model.Options) {
 				} else {
 					distributePointer = 0
 					WriteFile(files[distributePointer], line, options)
+					distributePointer = distributePointer + 1
 				}
 			} else {
 				for _, k := range files {
@@ -86,6 +87,6 @@ func Gee(options model.Options) {
 	// Graceful shutdown
 	ClosedFiles(files)
 	if options.Debug {
-		printing.DebugMsg("MSG","Finish gee, graceful shutdown...")
+		printing.DebugMsg("MSG", "Finish gee, graceful shutdown...")
 	}
 }
