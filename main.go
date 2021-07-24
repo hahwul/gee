@@ -84,8 +84,8 @@ func main() {
 		Uniq:          *uniqOption,
 	}
 	if *debugOption {
-		printing.DebugMsg("MSG", "Running on Debug mode")
-		printing.DebugMsg("FILES", files)
+		printing.DebugMsg("MSG", "Running on Debug mode", options.Debug)
+		printing.DebugMsg("FILES", files, options.Debug)
 	}
 	// Running gee app
 	app.Gee(options)
