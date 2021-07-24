@@ -17,6 +17,11 @@ func StringProc(l string, stdLine int, options model.Options) (string, string) {
 	var returnString string
 	var returnPlainString string
 
+	if options.Reverse {
+		result = setReverse(result)
+		result = setReverse(resultPlain)
+	}
+
 	au := aurora.NewAurora(options.Color)
 	if options.Find != "" {
 		if options.Replace != "" {

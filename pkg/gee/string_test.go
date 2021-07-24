@@ -18,7 +18,7 @@ func TestStringProc(t *testing.T) {
 		want string
 	}{
 		{
-			name: "test",
+			name: "test1",
 			args: args{
 				l:       "a1234",
 				stdLine: 0,
@@ -30,6 +30,65 @@ func TestStringProc(t *testing.T) {
 				},
 			},
 			want: "[0] b1234",
+		},
+		{
+			name: "test2",
+			args: args{
+				l:       "a1234",
+				stdLine: 0,
+				options: model.Options{
+					Find:          "a",
+					Format:        "",
+					WithTimestamp: true,
+					Split:         "1",
+				},
+			},
+			want: "[0] b1234",
+		},
+		{
+			name: "test3",
+			args: args{
+				l:       "a1234",
+				stdLine: 0,
+				options: model.Options{
+					Format: "json",
+				},
+			},
+			want: "[0] b1234",
+		},
+		{
+			name: "test4",
+			args: args{
+				l:       "a1234",
+				stdLine: 0,
+				options: model.Options{
+					Format: "md-table",
+				},
+			},
+			want: "[0] b1234",
+		},
+		{
+			name: "test4",
+			args: args{
+				l:       "a1234",
+				stdLine: 0,
+				options: model.Options{
+					Format: "html-table",
+				},
+			},
+			want: "[0] b1234",
+		},
+		{
+			name: "test5",
+			args: args{
+				l:       "abcd1234",
+				stdLine: 0,
+				options: model.Options{
+					Reverse: true,
+					Format:  "",
+				},
+			},
+			want: "4321dcba",
 		},
 	}
 	for _, tt := range tests {
