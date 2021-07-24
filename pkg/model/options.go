@@ -21,4 +21,5 @@ type Options struct {
 	Color         bool
 	Debug         bool
 	Reverse       bool
+	Uniq          bool
 }

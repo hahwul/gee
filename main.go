@@ -32,6 +32,7 @@ func main() {
 	formatOption := flag.String("format", "line", "Change output format (json, md-table, html-table)")
 	debugOption := flag.Bool("debug", false, "Show debug message!")
 	reverseOption := flag.Bool("reverse", false, "Reverse string in line")
+	uniqOption := flag.Bool("uniq", false, "Remove duplicated line")
 
 	// Custom usage
 	flag.Usage = func() {
@@ -80,6 +81,7 @@ func main() {
 		Format:        *formatOption,
 		Debug:         *debugOption,
 		Reverse:       *reverseOption,
+		Uniq:          *uniqOption,
 	}
 	if *debugOption {
 		printing.DebugMsg("MSG", "Running on Debug mode")
