@@ -31,6 +31,7 @@ func main() {
 	splitOption := flag.String("split", "", "Split string within line. (to line , to table, to md-table)")
 	formatOption := flag.String("format", "line", "Change output format (json, md-table, html-table)")
 	debugOption := flag.Bool("debug", false, "Show debug message!")
+	reverseOption := flag.Bool("reverse", false, "Reverse string in line")
 
 	// Custom usage
 	flag.Usage = func() {
@@ -78,10 +79,11 @@ func main() {
 		Split:         *splitOption,
 		Format:        *formatOption,
 		Debug:         *debugOption,
+		Reverse:       *reverseOption,
 	}
 	if *debugOption {
-		printing.DebugMsg("MSG","Running on Debug mode")
-		printing.DebugMsg("FILES",files)
+		printing.DebugMsg("MSG", "Running on Debug mode")
+		printing.DebugMsg("FILES", files)
 	}
 	// Running gee app
 	app.Gee(options)
