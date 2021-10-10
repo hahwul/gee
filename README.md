@@ -17,7 +17,6 @@
   <img src="https://github.com/hahwul/gee/workflows/Build/badge.svg">
   <img src="https://github.com/hahwul/gee/workflows/SAST/badge.svg">
   <a href="https://twitter.com/intent/follow?screen_name=hahwul"><img src="https://img.shields.io/twitter/follow/hahwul?style=flat&logo=twitter"></a>
-  <a href="https://github.com/hahwul"><img src="https://img.shields.io/github/stars/hahwul?style=flat&logo=github"></a></a>
 </p>
 
 ## 🔖 Introduction
