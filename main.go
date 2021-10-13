@@ -33,7 +33,7 @@ func main() {
 	debugOption := flag.Bool("debug", false, "Show debug message!")
 	reverseOption := flag.Bool("reverse", false, "Reverse string in line")
 	uniqOption := flag.Bool("uniq", false, "Remove duplicated line")
-	injectOption := flag.String("inject", "", "Inject stdin into the format of the factor value (This is %%INJECT%% line!)")
+	injectOption := flag.String("inject", "", "Inject stdin into the format of the factor value (e.g: -inject='This is %%INJECT%% line!')")
 	withLCOption := flag.Bool("with-lc", false, "With letters count (colorize magenta)")
 
 	// Custom usage
