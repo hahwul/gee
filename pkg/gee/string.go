@@ -46,6 +46,11 @@ func StringProc(l string, stdLine int, options model.Options) (string, string) {
 		resultPlain = "[" + GetNowTime() + "] " + resultPlain
 	}
 
+	if options.WithLettersCount {
+		result = au.BrightMagenta("["+strconv.Itoa(len(l))+"] ").String() + result
+		resultPlain = "[" + strconv.Itoa(len(l)) + "] " + resultPlain
+	}
+
 	if options.Split != "" {
 		resultArr = strings.Split(result, options.Split)
 		resultPlainArr = strings.Split(resultPlain, options.Split)

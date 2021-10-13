@@ -34,6 +34,7 @@ func main() {
 	reverseOption := flag.Bool("reverse", false, "Reverse string in line")
 	uniqOption := flag.Bool("uniq", false, "Remove duplicated line")
 	injectOption := flag.String("inject", "", "Inject stdin into the format of the factor value (This is %%INJECT%% line!)")
+	withLCOption := flag.Bool("with-lc", false, "With letters count (colorize magenta)")
 
 	// Custom usage
 	flag.Usage = func() {
@@ -64,26 +65,27 @@ func main() {
 
 	// Set Options
 	options := model.Options{
-		Files:         files,
-		Append:        *appendOption,
-		ChunkedLine:   *chunkedLineOption,
-		WithLine:      *withLineOption,
-		WithTimestamp: *withTimeOption,
-		Prefix:        *prefixOption,
-		Suffix:        *suffixOption,
-		RemoveNewLine: *rmnlOption,
-		Distribute:    *distributeOption,
-		Regex:         *regexOption,
-		RegexV:        *regexvOption,
-		Replace:       *replaceOption,
-		Find:          *findOption,
-		Color:         !*colorOption,
-		Split:         *splitOption,
-		Format:        *formatOption,
-		Debug:         *debugOption,
-		Reverse:       *reverseOption,
-		Uniq:          *uniqOption,
-		Inject:	       *injectOption,
+		Files:            files,
+		Append:           *appendOption,
+		ChunkedLine:      *chunkedLineOption,
+		WithLine:         *withLineOption,
+		WithTimestamp:    *withTimeOption,
+		Prefix:           *prefixOption,
+		Suffix:           *suffixOption,
+		RemoveNewLine:    *rmnlOption,
+		Distribute:       *distributeOption,
+		Regex:            *regexOption,
+		RegexV:           *regexvOption,
+		Replace:          *replaceOption,
+		Find:             *findOption,
+		Color:            !*colorOption,
+		Split:            *splitOption,
+		Format:           *formatOption,
+		Debug:            *debugOption,
+		Reverse:          *reverseOption,
+		Uniq:             *uniqOption,
+		Inject:	          *injectOption,
+		WithLettersCount: *withLCOption,
 	}
 	if *debugOption {
 		printing.DebugMsg("MSG", "Running on Debug mode", options.Debug)
