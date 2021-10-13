@@ -90,6 +90,18 @@ func TestStringProc(t *testing.T) {
 			},
 			want: "4321dcba",
 		},
+		{
+			name: "test6 (inject)",
+			args: args{
+				l:       "abcd1234",
+				stdLine: 0,
+				options: model.Options{
+					Inject: "-- %%INJECT%% --",
+					Format:  "",
+				},
+			},
+			want: "-- abcd1234 --",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
