@@ -23,7 +23,7 @@
 Gee is tool of stdin to each files and stdout. It is similar to the tee command, but there are more functions for convenience. In addition, it was written as go. which provides output to stdout and files. In this process, it has various processing functions for lines such as replace, prefix, and suffix, so it can be used as a pipeline configuration or as a utility for testing. For more information, see the usage and case of study below!
 
 ## 🚀 Installation
-From source
+### From source
 Go1.17
 ```
 go install -v github.com/hahwul/gee@latest
@@ -33,12 +33,12 @@ Go1.16
 ```
 GO111MODULE=on go get -v github.com/hahwul/gee
 ```
-With homebrew (only macos)
+### With homebrew (only macos)
 ```
 brew tap hahwul/gee
 brew install gee
 ```
-Download from [release](https://github.com/hahwul/gee/releases) page. (macos,linux,freebsd,windows)
+### Download from [release](https://github.com/hahwul/gee/releases) page. (macos,linux,freebsd,windows)
 ```
 wget https://github.com/hahwul/gee/releases/download/v1.0.4/gee_1.0.4_linux_amd64.tar.gz
 tar -xvf gee_1.0.4_linux_amd64.tar.gz
