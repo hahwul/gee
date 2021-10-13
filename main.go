@@ -33,6 +33,7 @@ func main() {
 	debugOption := flag.Bool("debug", false, "Show debug message!")
 	reverseOption := flag.Bool("reverse", false, "Reverse string in line")
 	uniqOption := flag.Bool("uniq", false, "Remove duplicated line")
+	injectOption := flag.String("inject", "", "Inject stdin into the format of the factor value (This is %%INJECT%% line!)")
 
 	// Custom usage
 	flag.Usage = func() {
@@ -82,6 +83,7 @@ func main() {
 		Debug:         *debugOption,
 		Reverse:       *reverseOption,
 		Uniq:          *uniqOption,
+		Inject:	       *injectOption,
 	}
 	if *debugOption {
 		printing.DebugMsg("MSG", "Running on Debug mode", options.Debug)

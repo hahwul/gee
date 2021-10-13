@@ -22,4 +22,5 @@ type Options struct {
 	Debug         bool
 	Reverse       bool
 	Uniq          bool
+	Inject        string
 }

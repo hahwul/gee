@@ -32,6 +32,10 @@ func StringProc(l string, stdLine int, options model.Options) (string, string) {
 		}
 	}
 
+	if strings.Contains(options.Inject, "%%INJECT%%") {
+		result = strings.Replace(options.Inject, "%%INJECT%%", result, -1)
+	}
+
 	if options.WithLine {
 		result = au.BrightBlue("["+strconv.Itoa(stdLine)+"] ").String() + result
 		resultPlain = "[" + strconv.Itoa(stdLine) + "] " + resultPlain
