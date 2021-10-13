@@ -102,6 +102,18 @@ func TestStringProc(t *testing.T) {
 			},
 			want: "-- abcd1234 --",
 		},
+		{
+			name: "test7 (with-lc)",
+			args: args{
+				l:       "a1234",
+				stdLine: 0,
+				options: model.Options{
+					Format:   "",
+					WithLettersCount: true,
+				},
+			},
+			want: "[5] a1234",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
