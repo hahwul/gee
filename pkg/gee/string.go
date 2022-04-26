@@ -1,6 +1,7 @@
 package gee
 
 import (
+	"regexp"
 	"strconv"
 	"strings"
 
@@ -16,6 +17,8 @@ func StringProc(l string, stdLine int, options model.Options) (string, string) {
 	var resultPlainArr []string
 	var returnString string
 	var returnPlainString string
+	const ansi = "[\u001B\u009B][[\\]()#;?]*(?:(?:(?:[a-zA-Z\\d]*(?:;[a-zA-Z\\d]*)*)?\u0007)|(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PRZcf-ntqry=><~]))"
+	var ansiRegex = regexp.MustCompile(ansi)
 
 	if options.Reverse {
 		result = setReverse(result)
@@ -75,6 +78,10 @@ func StringProc(l string, stdLine int, options model.Options) (string, string) {
 	case "html-table":
 		returnString = "<tr>" + returnString + "</tr>\n"
 		returnPlainString = "<tr>" + returnPlainString + "</tr>\n"
+	}
+	if !options.Color {
+		ansiRegex.ReplaceAllString(returnString, "")
+		ansiRegex.ReplaceAllString(returnPlainString, "")
 	}
 	return returnString, returnPlainString
 }
