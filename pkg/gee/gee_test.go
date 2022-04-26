@@ -75,6 +75,15 @@ func TestGee(t *testing.T) {
 				},
 			},
 		},
+		{
+			name: "test distribute (nofile)",
+			args: args{
+				options: model.Options{
+					Append:     false,
+					Distribute: true,
+				},
+			},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
