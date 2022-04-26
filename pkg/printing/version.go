@@ -1,4 +1,4 @@
 package printing
 
 // VERSION is version of gee
-const VERSION = "v1.1.1"
+const VERSION = "v1.1.2"
