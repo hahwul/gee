@@ -78,7 +78,7 @@ func TestGee(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			input := []byte("Alice")
+			input := []byte("HAHWUL")
 			r, w, err := os.Pipe()
 			if err != nil {
 				t.Fatal(err)
@@ -90,7 +90,6 @@ func TestGee(t *testing.T) {
 			}
 			w.Close()
 			stdin := os.Stdin
-			// Restore stdin right after the test.
 			defer func() { os.Stdin = stdin }()
 			os.Stdin = r
 			Gee(tt.args.options)
