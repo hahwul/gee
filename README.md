@@ -24,15 +24,10 @@ Gee is tool of stdin to each files and stdout. It is similar to the tee command,
 
 ## 🚀 Installation
 ### From source
-Go1.17
 ```
 go install -v github.com/hahwul/gee@latest
 ```
 
-Go1.16
-```
-GO111MODULE=on go get -v github.com/hahwul/gee
-```
 ### With homebrew (only macos)
 ```
 brew tap hahwul/gee
