@@ -95,7 +95,7 @@ Flags:
 ```
 
 ### Github action
-```
+```yaml
 - name: Gee env
   uses: hahwul/gee@v1.1.2-action
   with:
