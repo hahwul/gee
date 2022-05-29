@@ -94,6 +94,15 @@ Flags:
         With timestamp (colorize green)
 ```
 
+### Github action
+```
+- name: Gee env
+  uses: hahwul/gee@v1.1.2-action
+  with:
+    input: this is blue
+    flags: '-prefix "+prefix+" -suffix "+suffix+"'
+```
+
 ## 📚 Case of Study
 ### gee with prefix and suffix
 ```
