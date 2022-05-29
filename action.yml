@@ -1,0 +1,21 @@
+name: 'Gee'
+description: 'Gee is tool of stdin to each files and stdout. It is similar to the tee command, but there are more functions for convenience. In addition'
+branding:
+  icon: 'terminal'
+  color: 'green'
+inputs:
+  input: 
+    description: 'Data for Stdin'
+    required: true
+  flags: 
+    description: 'Flags string for gee (command-line flags)'
+    required: false
+outputs:
+  output: 
+    description: 'Output'
+runs:
+  using: 'docker'
+  image: 'github-action/Dockerfile'
+  args:
+    - ${{ inputs.input }}
+    - ${{ inputs.flags }}
