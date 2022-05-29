@@ -1,5 +1,5 @@
-name: 'Gee'
-description: 'Gee is tool of stdin to each files and stdout. It is similar to the tee command, but there are more functions for convenience. In addition'
+name: 'Gee env'
+description: 'Gee is tool of stdin to each files and stdout. It is similar to the tee command'
 branding:
   icon: 'terminal'
   color: 'green'
