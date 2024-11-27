@@ -48,14 +48,14 @@ release:
 brews:
   -
     name: gee
-    tap:
+    repository:
       owner: hahwul
       name: homebrew-gee
     url_template: "https://github.com/hahwul/gee/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     commit_author:
       name: hahwul
       email: hahwul@gmail.com
-    folder: Formula
+    directory: Formula
     homepage: "https://github.com/hahwul/gee"
     description: "Standard input to each files and stdout. similar to tee, write in go"
     test: |
