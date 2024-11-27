@@ -17,3 +17,6 @@
 # Docs
 _site
 .jekyll-cache
+
+# Executables
+gee
