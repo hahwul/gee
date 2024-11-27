@@ -15,7 +15,6 @@
   <a href="https://app.codacy.com/gh/hahwul/gee?utm_source=github.com&utm_medium=referral&utm_content=hahwul/gee&utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/fac8a4d4755a4fb481432f7ed14db3ca"></a>
   <a href="https://codecov.io/gh/hahwul/gee"><img src="https://codecov.io/gh/hahwul/gee/branch/main/graph/badge.svg"/></a>
   <img src="https://github.com/hahwul/gee/workflows/Build/badge.svg">
-  <img src="https://github.com/hahwul/gee/workflows/SAST/badge.svg">
   <a href="https://twitter.com/intent/follow?screen_name=hahwul"><img src="https://img.shields.io/twitter/follow/hahwul?style=flat&logo=twitter"></a>
 </p>
 
