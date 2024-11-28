@@ -20,3 +20,6 @@ _site
 
 # Executables
 gee
+
+# dist
+/dist
