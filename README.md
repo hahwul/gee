@@ -79,6 +79,8 @@ Flags:
         Split string within line. (to line , to table, to md-table)
   -suffix string
         Suffix string
+  -trim
+        Trim leading and trailing whitespace
   -uncolor
         Uncolorize stdout
   -uniq
