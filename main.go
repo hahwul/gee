@@ -35,6 +35,7 @@ func main() {
 	uniqOption := flag.Bool("uniq", false, "Remove duplicated line")
 	injectOption := flag.String("inject", "", "Inject stdin into the format of the factor value (e.g: -inject='This is %%INJECT%% line!')")
 	withLCOption := flag.Bool("with-lc", false, "With letters count (colorize magenta)")
+	trimOption := flag.Bool("trim", false, "Trim leading and trailing whitespace")
 
 	// Custom usage
 	flag.Usage = func() {
@@ -86,6 +87,7 @@ func main() {
 		Uniq:             *uniqOption,
 		Inject:	          *injectOption,
 		WithLettersCount: *withLCOption,
+		Trim:             *trimOption,
 	}
 	if *debugOption {
 		printing.DebugMsg("MSG", "Running on Debug mode", options.Debug)

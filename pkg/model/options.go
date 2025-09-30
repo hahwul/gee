@@ -24,4 +24,5 @@ type Options struct {
 	Uniq             bool
 	Inject           string
 	WithLettersCount bool
+	Trim             bool
 }

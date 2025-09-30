@@ -114,6 +114,30 @@ func TestStringProc(t *testing.T) {
 			},
 			want: "[5] a1234",
 		},
+		{
+			name: "test8 (trim)",
+			args: args{
+				l:       "  test with spaces  ",
+				stdLine: 0,
+				options: model.Options{
+					Format: "",
+					Trim:   true,
+				},
+			},
+			want: "test with spaces",
+		},
+		{
+			name: "test9 (trim with tabs)",
+			args: args{
+				l:       "\t\ttest\t\t",
+				stdLine: 0,
+				options: model.Options{
+					Format: "",
+					Trim:   true,
+				},
+			},
+			want: "test",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
